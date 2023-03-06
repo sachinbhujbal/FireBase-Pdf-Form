@@ -72,7 +72,5 @@ public class View_PDF_Files extends AppCompatActivity {
 
             }
         });
-
     }
-
 }

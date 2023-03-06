@@ -47,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
         editPdfName=findViewById(R.id.txt_pdfName);
         upload=findViewById(R.id.btn_upload);
@@ -92,20 +93,13 @@ public class MainActivity extends AppCompatActivity {
                         }
                         break;
 
-                    case R.id.rate_menu:
-                        break;
-
-                    case R.id.version_control:
-                        break;
-
-
-
-
-// Try to invoke the intent.
-
+//                    case R.id.rate_menu:
+//                        break;
+//
+//                    case R.id.version_control:
+//                        break;
 
                 }
-
                 return false;
             }
         });
