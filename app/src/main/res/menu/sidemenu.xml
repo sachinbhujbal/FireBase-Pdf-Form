@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+
+    <group
+        android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/home_menu"
+            android:icon="@drawable/baseline_home_24"
+            android:title="Home"
+
+            >
+        </item>
+
+        <item
+            android:id="@+id/share_menu"
+            android:icon="@drawable/baseline_share_24"
+            android:title="Share"
+            >
+        </item>
+
+        <item
+            android:id="@+id/rate_menu"
+            android:icon="@drawable/baseline_star_rate_24"
+            android:title="Rate Us"
+            android:onClick="RateUs"
+            >
+        </item>
+
+    </group>
+
+
+    <group android:checkableBehavior="single">
+
+        <item android:title="Version Control">
+            <menu>
+
+                <item android:title="Version"
+                    android:id="@+id/version_control"
+                    android:icon="@drawable/baseline_android_24">
+
+                </item>
+            </menu>
+
+
+
+        </item>
+
+    </group>
+
+</menu>
