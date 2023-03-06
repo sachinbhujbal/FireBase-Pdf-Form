@@ -1,35 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<androidx.drawerlayout.widget.DrawerLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".MainActivity"
-    android:layout_width="match_parent"
-   android:layout_height="match_parent"
-    tools:ignore="HardcodedText"
-    android:id="@+id/drawer_layout"
-    >
-
-    <FrameLayout
-        android:id="@+id/content_frame"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-
-    <ScrollView
-        android:layout_width="280dp"
-        android:layout_height="match_parent"
-        android:id="@+id/leftRl"
-        android:layout_marginBottom="5dp"
-        android:background="#fff">
-<LinearLayout
 
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center"
     android:padding="30dp"
-
+    android:id="@+id/linear_layout"
+    tools:ignore="HardcodedText"
     >
 
     <ImageView
@@ -87,13 +69,3 @@
         android:onClick="view_pdf"/>
 
 </LinearLayout>
-
-    </ScrollView>
-    <com.google.android.material.navigation.NavigationView
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_gravity="start"
-        app:menu="@menu/sidemenu"
-        android:id="@+id/navigaion"/>
-
-</androidx.drawerlayout.widget.DrawerLayout>

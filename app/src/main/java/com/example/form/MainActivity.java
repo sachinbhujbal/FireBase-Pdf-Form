@@ -4,11 +4,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.app.ProgressDialog;
-import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -30,8 +28,6 @@ import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
-import java.util.Objects;
-import java.util.zip.Inflater;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -47,18 +43,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_main);
         editPdfName=findViewById(R.id.txt_pdfName);
         upload=findViewById(R.id.btn_upload);
-        navigationView=findViewById(R.id.navigaion);
-
-        drawerLayout=findViewById(R.id.drawer_layout);
-        actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.nav_open, R.string.nav_close);
-        drawerLayout.addDrawerListener(actionBarDrawerToggle);
-        actionBarDrawerToggle.syncState();
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
         storageReference= FirebaseStorage.getInstance().getReference();
         databaseReference= FirebaseDatabase.getInstance().getReference("uploads");
 
@@ -68,42 +55,6 @@ public class MainActivity extends AppCompatActivity {
                 seletPDFfile();
             }
         });
-
-        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId())
-                {
-                   case  R.id.home_menu:
-                       drawerLayout.close();
-                       break;
-                    case R.id.share_menu:
-                        Intent sendIntent = new Intent(Intent.ACTION_SEND);
-                        sendIntent.setType("text/plain");
-                        String body = "Your body here\n"+
-                                "Link for download: ";
-                        String sub = "Form App";
-                        sendIntent.putExtra(Intent.EXTRA_SUBJECT,sub);
-                        sendIntent.putExtra(Intent.EXTRA_TEXT,body);
-                        startActivity(Intent.createChooser(sendIntent,"Share Using"));
-                        try {
-                            startActivity(sendIntent);
-                        } catch (ActivityNotFoundException e) {
-                            // Define what your app should do if no activity can handle the intent.
-                        }
-                        break;
-
-//                    case R.id.rate_menu:
-//                        break;
-//
-//                    case R.id.version_control:
-//                        break;
-
-                }
-                return false;
-            }
-        });
-
 
     }
 
