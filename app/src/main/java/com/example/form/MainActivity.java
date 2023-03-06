@@ -48,7 +48,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         editPdfName=findViewById(R.id.txt_pdfName);
         upload=findViewById(R.id.btn_upload);
         navigationView=findViewById(R.id.navigaion);
@@ -94,6 +93,10 @@ public class MainActivity extends AppCompatActivity {
                         break;
 
                     case R.id.rate_menu:
+                        break;
+
+                    case R.id.version_control:
+                        break;
 
 
 
